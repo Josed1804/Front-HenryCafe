@@ -64,9 +64,11 @@ export function Product() {
   return (
     <>
       <section className="relative block h-[50vh]">
-        <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/background-3.png')] bg-cover bg-center scale-105" />
+        <div className="bg-profile-background absolute top-0 -mt-10 h-full w-full bg-[url('/img/coffee.jpg')] bg-cover bg-center scale-105" />
         <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
       </section>
+
+
       <section className="relative bg-white py-16">
         <div className="relative mb-6 -mt-40 flex w-full px-4 min-w-0 flex-col break-words bg-white">
           <div className="container mx-auto">
@@ -114,29 +116,31 @@ export function Product() {
                   className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[400px] w-full bg-white p-8 rounded outline-none z-50"
                   overlayClassName="fixed top-0 left-0 w-full h-full bg-black/70 z-40"
                 >
-                  <Typography variant="h4" className="mb-4">
-                    Carrito de Compras
-                  </Typography>
-                  {cartItems.map((item, index) => (
-                    <div key={index} className="flex items-center mb-4">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="h-16 w-16 mr-4 object-cover"
-                      />
-                      <div>
-                        <Typography variant="h6" className="mb-2">
-                          {item.name}
-                        </Typography>
-                        <Typography variant="paragraph" className="mb-2">
-                          Precio: ${item.price}
-                        </Typography>
-                        <Button onClick={() => handleRemoveFromCart(index)} color="red">
-                          Eliminar
-                        </Button>
+                  <div className="max-h-72 overflow-y-auto"> {/* Agregando las clases de Tailwind para el desplazamiento */}
+                    <Typography variant="h4" className="mb-4">
+                      Carrito de Compras
+                    </Typography>
+                    {cartItems.map((item, index) => (
+                      <div key={index} className="flex items-center mb-4">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="h-16 w-16 mr-4 object-cover"
+                        />
+                        <div>
+                          <Typography variant="h6" className="mb-2">
+                            {item.name}
+                          </Typography>
+                          <Typography variant="paragraph" className="mb-2">
+                            Precio: ${item.price}
+                          </Typography>
+                          <Button onClick={() => handleRemoveFromCart(index)} color="red">
+                            Eliminar
+                          </Button>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                   <Typography variant="paragraph" className="mb-4">
                     Número de artículos en el carrito: {cartItems.length}
                   </Typography>
@@ -150,6 +154,7 @@ export function Product() {
                     Cerrar
                   </Button>
                 </Modal>
+
 
                 <div className="flex justify-start py-4 pt-8 lg:pt-4">
                   <div className="mr-4 p-3 text-center">
@@ -244,49 +249,88 @@ export function Product() {
               <Card className="mt-6 w-90 m-3">
                 <CardHeader color="blue-gray" className="relative h-50">
                   <img
-                    src="/img/product1.PNG"
+                    src="/img/Bombon_expresso.jpg"
                     alt="card-image"
                   />
                 </CardHeader>
                 <CardBody>
                   <Typography variant="h5" color="blue-gray" className="mb-2">
-                    Bonbón y Carajillo
+                    Cafe Bonbón
                   </Typography>
                   <Typography>
-                    <strong>Café Bonbon:</strong> Espresso y leche condensada en armonía, una mezcla dulce e intensa para los amantes del café con un toque de indulgencia.
-                    <br /> <br /><br />
-                    <strong>Café Carajillo:</strong> Espresso con un toque de licor, una fusión audaz y enérgica para quienes buscan una experiencia de café única.
+                    Espresso y leche condensada en armonía, una mezcla dulce e intensa para los amantes del café con un toque de indulgencia.
                   </Typography>
-
-
                   <Typography variant="h5" color="black" className="mt-2 mb-0">
                     <strong>$20.000</strong>
                   </Typography>
                 </CardBody>
                 <CardFooter className="mt-auto">
-                  <Button onClick={() => handleAddToCart({ name: "Bonbón y Carajillo", price: 20000, image: "/img/product1.PNG" })} color="brown">
+                  <Button onClick={() => handleAddToCart({ name: "Cafe Bonbón", price: 20000, image: "/img/Bombon_expresso.jpg" })} color="brown">
                     Agregar al carrito
                   </Button>
                 </CardFooter>
-
-
               </Card>
-
-              <Card className="mt-6 w-96 m-3">
+              <Card className="mt-6 w-90 m-3">
                 <CardHeader color="blue-gray" className="relative h-50">
                   <img
-                    src="/img/prodduct2.PNG"
+                    src="/img/cafe_carajillo.jpg"
                     alt="card-image"
                   />
                 </CardHeader>
                 <CardBody>
                   <Typography variant="h5" color="blue-gray" className="mb-2">
-                    Mocca e Irish
+                    Café Carajillo
                   </Typography>
                   <Typography>
-                    <strong>Café Mocca:</strong> La combinación perfecta de espresso, chocolate y leche, creando una deliciosa y reconfortante experiencia de café con un toque de indulgencia.
-                    <br />
-                    <strong>Café Irish:</strong> Una mezcla audaz de espresso y whisky irlandés, proporcionando una experiencia de café robusta con un toque cálido y embriagador.
+                    Espresso con un toque de licor, una fusión audaz y enérgica para quienes buscan una experiencia de café única.
+                  </Typography>
+                  <Typography variant="h5" color="black" className="mt-2 mb-0">
+                    <strong>$20.000</strong>
+                  </Typography>
+                </CardBody>
+                <CardFooter className="mt-auto">
+                  <Button onClick={() => handleAddToCart({ name: "Café Carajillo", price: 20000, image: "/img/cafe_carajillo.jpg" })} color="brown">
+                    Agregar al carrito
+                  </Button>
+                </CardFooter>
+              </Card>
+              <Card className="mt-6 w-96 m-3">
+                <CardHeader color="blue-gray" className="relative h-50">
+                  <img
+                    src="/img/cafe_mocca.jpg"
+                    alt="card-image"
+                  />
+                </CardHeader>
+                <CardBody>
+                  <Typography variant="h5" color="blue-gray" className="mb-2">
+                    Café mocca
+                  </Typography>
+                  <Typography>
+                    La combinación perfecta de espresso, chocolate y leche, creando una deliciosa y reconfortante experiencia de café con un toque de indulgencia.
+                  </Typography>
+                  <Typography variant="h5" color="black" className="mt-2 mb-0">
+                    <strong>$10.000</strong>
+                  </Typography>
+                </CardBody>
+                <CardFooter className="mt-auto">
+                  <Button onClick={() => handleAddToCart({ name: "Café mocca", price: 10000, image: "/img/cafe_mocca.jpg" })} color="brown">
+                    Agregar al carrito
+                  </Button>
+                </CardFooter>
+              </Card>
+              <Card className="mt-6 w-96 m-3">
+                <CardHeader color="blue-gray" className="relative h-50">
+                  <img
+                    src="/img/Café_irish.jpg"
+                    alt="card-image"
+                  />
+                </CardHeader>
+                <CardBody>
+                  <Typography variant="h5" color="blue-gray" className="mb-2">
+                    Café Irish
+                  </Typography>
+                  <Typography>
+                    Una mezcla audaz de espresso y whisky irlandés, proporcionando una experiencia de café robusta con un toque cálido y embriagador.
                   </Typography>
 
                   <Typography variant="h5" color="black" className="mt-2 mb-0">
@@ -294,7 +338,7 @@ export function Product() {
                   </Typography>
                 </CardBody>
                 <CardFooter className="mt-auto">
-                  <Button onClick={() => handleAddToCart({ name: "Mocca e Irish", price: 10000, image: "/img/prodduct2.PNG" })} color="brown">
+                  <Button onClick={() => handleAddToCart({ name: "Café Irish", price: 10000, image: "/img/Café_irish.jpg" })} color="brown">
                     Agregar al carrito
                   </Button>
                 </CardFooter>
@@ -303,18 +347,16 @@ export function Product() {
               <Card className="mt-6 w-96 m-3">
                 <CardHeader color="blue-gray" className="relative h-50">
                   <img
-                    src="/img/product3.PNG"
+                    src="/img/Café_expresso.jpg"
                     alt="card-image"
                   />
                 </CardHeader>
                 <CardBody>
                   <Typography variant="h5" color="blue-gray" className="mb-2">
-                    Expresso y Americano
+                    Café expresso
                   </Typography>
                   <Typography>
-                    <strong>Espresso:</strong> La esencia pura del café concentrado en una pequeña cantidad. Un disparo intenso de sabor y energía para los amantes del café fuerte.
-                    <br /><br />
-                    <strong>Americano:</strong> Espresso con agua caliente, ofreciendo una taza suave y equilibrada. Perfecto para aquellos que prefieren un café más suave y ligero.
+                    La esencia pura del café concentrado en una pequeña cantidad. Un disparo intenso de sabor y energía para los amantes del café fuerte.
                   </Typography>
 
                   <Typography variant="h5" color="black" className="mt-2 mb-0">
@@ -322,7 +364,32 @@ export function Product() {
                   </Typography>
                 </CardBody>
                 <CardFooter className="mt-auto">
-                  <Button onClick={() => handleAddToCart({ name: "Expresso y Americano", price: 12000, image: "/img/product3.PNG" })} color="brown">
+                  <Button onClick={() => handleAddToCart({ name: "Café expresso", price: 12000, image: "/img/Café_expresso.jpg" })} color="brown">
+                    Agregar al carrito
+                  </Button>
+                </CardFooter>
+              </Card>
+              <Card className="mt-6 w-96 m-3">
+                <CardHeader color="blue-gray" className="relative h-50">
+                  <img
+                    src="/img/CafeAmericano.jpg"
+                    alt="card-image"
+                  />
+                </CardHeader>
+                <CardBody>
+                  <Typography variant="h5" color="blue-gray" className="mb-2">
+                    Café Americano
+                  </Typography>
+                  <Typography>
+                    Espresso con agua caliente, ofreciendo una taza suave y equilibrada. Perfecto para aquellos que prefieren un café más suave y ligero.
+                  </Typography>
+
+                  <Typography variant="h5" color="black" className="mt-2 mb-0">
+                    <strong>$12.000</strong>
+                  </Typography>
+                </CardBody>
+                <CardFooter className="mt-auto">
+                  <Button onClick={() => handleAddToCart({ name: " Café Americano", price: 12000, image: "/img/CafeAmericano.jpg" })} color="brown">
                     Agregar al carrito
                   </Button>
                 </CardFooter>
@@ -330,16 +397,16 @@ export function Product() {
               <Card className="mt-6 w-96 m-3">
                 <CardHeader color="brown" className="relative h-50">
                   <img
-                    src="/img/product4.PNG"
+                    src="/img/CafeMacchiato.jpg"
                     alt="card-image"
                   />
                 </CardHeader>
                 <CardBody>
                   <Typography variant="h5" color="blue-gray" className="mb-2">
-                    MIchatto
+                    Cafe Macchiato
                   </Typography>
                   <Typography>
-                    <strong>Macchiato:</strong> Espresso con una pequeña cantidad de leche, creando una bebida equilibrada y deliciosa. Ideal para aquellos que disfrutan de un toque suave en su espresso.
+                    Espresso con una pequeña cantidad de leche, creando una bebida equilibrada y deliciosa. Ideal para aquellos que disfrutan de un toque suave en su espresso.
                   </Typography>
 
                   <Typography variant="h5" color="black" className="mt-2 mb-0">
@@ -347,7 +414,7 @@ export function Product() {
                   </Typography>
                 </CardBody>
                 <CardFooter className="mt-auto">
-                  <Button onClick={() => handleAddToCart({ name: "MIchatto", price: 20000, image: "/img/product4.PNG" })} color="brown">
+                  <Button onClick={() => handleAddToCart({ name: "Cafe Macchiato", price: 20000, image: "/img/CafeMacchiato.jpg" })} color="brown">
                     Agregar al carrito
                   </Button>
                 </CardFooter>
@@ -356,16 +423,16 @@ export function Product() {
               <Card className="mt-6 w-96 m-3">
                 <CardHeader color="brown" className="relative h-50">
                   <img
-                    src="/img/product5.PNG"
+                    src="/img/Cappuccino.jpg"
                     alt="card-image"
                   />
                 </CardHeader>
                 <CardBody>
                   <Typography variant="h5" color="blue-gray" className="mb-2">
-                    Cappuccino
+                    Cafe Cappuccino
                   </Typography>
                   <Typography>
-                    <strong>Cappuccino:</strong> Una mezcla perfecta de espresso, leche vaporizada y espuma de leche, creando una textura suave y una experiencia de café indulgente. Ideal para quienes buscan una bebida equilibrada y deliciosa.
+                    Una mezcla perfecta de espresso, leche vaporizada y espuma de leche, creando una textura suave y una experiencia de café indulgente. Ideal para quienes buscan una bebida equilibrada y deliciosa.
                   </Typography>
 
                   <Typography variant="h5" color="black" className="mt-2 mb-0">
@@ -373,7 +440,7 @@ export function Product() {
                   </Typography>
                 </CardBody>
                 <CardFooter className="mt-auto">
-                  <Button onClick={() => handleAddToCart({ name: "Cappuccino", price: 10000, image: "/img/product5.PNG" })} color="brown">
+                  <Button onClick={() => handleAddToCart({ name: "Cafe Cappuccino", price: 10000, image: "/img/Cappuccino.jpg" })} color="brown">
                     Agregar al carrito
                   </Button>
                 </CardFooter>
@@ -382,13 +449,13 @@ export function Product() {
               <Card className="mt-6 w-96 m-3">
                 <CardHeader color="brown" className="relative h-50">
                   <img
-                    src="/img/product6.PNG"
+                    src="/img/Ristretto_espresso.jpg"
                     alt="card-image"
                   />
                 </CardHeader>
                 <CardBody>
                   <Typography variant="h5" color="blue-gray" className="mb-2">
-                    Ristretto
+                    Cafe Ristretto
                   </Typography>
                   <Typography>
                     <strong>Ristretto:</strong> Una versión más concentrada de espresso, con un sabor intenso y robusto. Perfecto para los amantes del café fuerte y aromático que buscan una experiencia de sabor concentrada.
@@ -399,7 +466,7 @@ export function Product() {
                   </Typography>
                 </CardBody>
                 <CardFooter className="mt-auto">
-                  <Button onClick={() => handleAddToCart({ name: "Ristretto", price: 15000, image: "/img/product6.PNG" })} color="brown">
+                  <Button onClick={() => handleAddToCart({ name: "Cafe Ristretto", price: 15000, image: "/img/Ristretto_espresso.jpg" })} color="brown">
                     Agregar al carrito
                   </Button>
                 </CardFooter>
