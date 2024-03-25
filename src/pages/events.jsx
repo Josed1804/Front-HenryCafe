@@ -15,8 +15,11 @@ import { Footer } from "@/widgets/layout";
 
 export function Events() {
   const handleContactUs = () => {
-    window.open("https://wa.me/3005710804", "_blank");
+    const message = encodeURIComponent("*¡Me interesa un evento con Henry Cafe!*");
+    window.open(`https://wa.me/3005710804/?text=${message}`, "_blank");
   };
+
+
 
   return (
     <>
@@ -76,8 +79,6 @@ export function Events() {
                       <Typography className="text-gray font-normal group-hover:text-black dark:text-black">
                         Variedad en el menú Amplia gama de opciones gastronómicas, desde aperitivos hasta postres, para satisfacer todos los gustos y preferencias.
                         Ambiente acogedor Espacio elegante y acogedor que promueve la creación de recuerdos memorables con amigos y familiares, donde los invitados se sienten cómodos y bienvenidos.
-                        Profesionalismo y atención personalizada: Equipo altamente capacitado que ofrece un servicio excepcional y atención personalizada en cada etapa del evento, garantizando una experiencia sin contratiempos.
-                        Flexibilidad y personalización Posibilidad de personalizar cada detalle del evento, desde el menú hasta la decoración y la disposición del espacio, adaptándose a las necesidades y visiones individuales de cada cliente.
                       </Typography>
                     </div>
                     <div className="absolute top-0 left-0 w-full h-full bg-[#6F4E37] opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
@@ -161,6 +162,7 @@ export function Events() {
             <span>Contactanos</span>
           </Button>
         </div>
+        
       </section>
       <div className="bg-white">
         <Footer />

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
- 
+
 
 
 export function SignUp() {
@@ -58,21 +58,24 @@ export function SignUp() {
   };
 
   return (
-    <section className="m-8 flex">
-      <div className="w-2/5 h-full hidden lg:block">
+    <section className="m-8 flex flex-col lg:flex-row justify-center items-center">
+      <div className="w-full lg:w-2/5 lg:flex hidden">
         <img
           src="/img/background-2.jpg"
           className="h-full w-full object-cover rounded-3xl"
+          alt="Background"
         />
       </div>
       <div className="w-full lg:w-3/5 flex flex-col items-center justify-center">
-        <div className="flex items-center justify-center flex-col">
-          <img src="/img/logop.png" alt="" width={'100'} className="mb-4" />
-          <Typography variant="h2" className="font-bold mb-4">Registrate hoy</Typography>
-          <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal">Ingresa tu nombre, correo y contraseña para registrarte</Typography>
-        </div>
-        <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
-          <div className="mb-1 flex flex-col gap-6">
+      <div className="flex flex-col items-center justify-center">
+        <Link to="/">
+          <img src="/img/logop.png" alt="Logo" width={'100'} className="mb-4" />
+        </Link>
+        <Typography variant="h2" className="font-bold mb-4">Registrate hoy</Typography>
+        <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal">Ingresa tu nombre, correo y contraseña para registrarte</Typography>
+      </div>
+        <form className="mt-8 mb-2 mx-auto w-full max-w-lg lg:w-2/3">
+          <div className="mb-6 flex flex-col gap-6">
             <Typography variant="small" color="blue-gray" className="-mb-3 font-medium">
               Nombre
             </Typography>
@@ -81,7 +84,7 @@ export function SignUp() {
               size="lg"
               placeholder="AlejaMUndo"
               value={nombre}
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+              className="border-t-blue-gray-200 focus:border-t-gray-900"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -96,7 +99,7 @@ export function SignUp() {
               size="lg"
               placeholder="name@mail.com"
               value={email}
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+              className="border-t-blue-gray-200 focus:border-t-gray-900"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -111,7 +114,7 @@ export function SignUp() {
               size="lg"
               placeholder="********"
               value={pswd}
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+              className="border-t-blue-gray-200 focus:border-t-gray-900"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -123,11 +126,23 @@ export function SignUp() {
             Registrar
           </Button>
 
+          <div className="flex justify-between items-center mt-4 w-full">
+            <Typography variant="paragraph" className="text-blue-gray-500 font-medium">
+              ¿Ya tienes cuenta?
+              <Link to="/sign-in" className="text-gray-900 ml-1">Inicia sesión</Link>
+            </Typography>
+            <div>
+              <Button
+                color="blue-gray"
+                onClick={() => console.log('Iniciar sesión con Google')}
+                className="flex items-center gap-2 px-4 py-2 rounded-md bg-white border border-gray-300 hover:bg-gray-50"
+              >
+                <img src="/img/google.png" alt="Google" className="w-6 h-6" />
+                <span className="font-bold text-black">Iniciar sesión</span>
+              </Button>
 
-          <Typography variant="paragraph" className="text-center text-blue-gray-500 font-medium mt-4">
-            ¿Ya tienes cuenta?
-            <Link to="/sign-in" className="text-gray-900 ml-1">Inicia sesión</Link>
-          </Typography>
+            </div>
+          </div>
         </form>
 
       </div>

@@ -64,11 +64,13 @@ export function SignIn() {
   return (
     <section className="m-8 flex gap-4">
       <div className="w-full lg:w-3/5 mt-24">
-        <div className="flex items-center justify-center flex-col">
-          <img src="/img/logop.png" alt="" width={'100'} className="mb-4" />
-          <Typography variant="h2" className="font-bold mb-4">Inicia sesión</Typography>
-          <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal text-center">Ingresa tu email y contraseña</Typography>
-        </div>
+      <div className="flex flex-col items-center justify-center">
+        <Link to="/">
+          <img src="/img/logop.png" alt="Logo" width={'100'} className="mb-4" />
+        </Link>
+        <Typography variant="h2" className="font-bold mb-4"> Iniciar Sesion </Typography>
+        <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal">Ingresa tu correo y contraseña para Iniciar Sesion </Typography>
+      </div>
 
         <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
           <div className="mb-1 flex flex-col gap-6">

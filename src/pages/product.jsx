@@ -76,12 +76,6 @@ export function Product() {
           <br />
         </div>
       </section>
-
-
-
-
-
-
       <section className="relative bg-white py-16">
         <div className="relative mb-6 -mt-40 flex w-full px-4 min-w-0 flex-col break-words bg-white">
           <div className="container mx-auto">
