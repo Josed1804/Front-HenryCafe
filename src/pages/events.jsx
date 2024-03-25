@@ -20,10 +20,16 @@ export function Events() {
 
   return (
     <>
-      <section className="relative block h-[50vh]">
-        <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/somo.jpeg')] bg-cover bg-center scale-105" />
-        <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
+      <section className="relative block h-[90vh]">
+        <div className="bg-profile-background absolute top-0 left-0 w-full h-full" style={{ backgroundPosition: "center top -10px" }}>
+          <img src="/img/eventos1.jpg" alt="Eventos" className="object-cover w-full h-full" />
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black/60" />
       </section>
+
+
+
+
       <section className="relative bg-white py-16">
         <div className="relative mb-6 -mt-40 flex w-full px-4 min-w-0 flex-col break-words bg-white">
           <div className="container mx-auto">
@@ -31,7 +37,7 @@ export function Events() {
               <div className="relative flex gap-6 items-start">
                 <div className="-mt-20 w-40">
                   <Avatar
-                    src="/img/background-1.jpg"
+                    src="/img/eventos.jpg"
                     alt="Profile picture"
                     variant="circular"
                     className="h-full w-full"
@@ -53,19 +59,28 @@ export function Events() {
                   className="m-0 w-2/5 shrink-0 rounded-r-none flex items-center justify-center"
                 >
                   <img
-                    src="/img/event1.jpg"
+                    src="/img/eventoos_sociales.jpg"
                     alt="card-image"
-                    className="h-full w-full object-cover"
+                    className="object-cover object-center w-full h-auto md:h-full min-h-[800px]"
                   />
                 </CardHeader>
                 <CardBody className="flex items-center justify-center">
-                  <div className="text-justify">
-                    <Typography variant="h4" color="blue-gray" className="mb-2">
-                      Eventos sociales
-                    </Typography>
-                    <Typography color="gray" className="mb-8 font-normal">
-                      Don Henry Café es el lugar perfecto para celebrar cumpleaños, aniversarios o cualquier otra ocasión especial. Contamos con un menú variado para todos los gustos, así como con un equipo de profesionales que se encargará de que tu evento sea perfecto.
-                    </Typography>
+                  <div className="text-justify relative group">
+                    <div className="text-justify relative group">
+                      <Typography variant="h4" className="text-blue-gray group-hover:text-black dark:text-black">
+                        Eventos sociales
+                        <br />
+                      </Typography>
+                    </div>
+                    <div className="mt-2 mb-0">
+                      <Typography className="text-gray font-normal group-hover:text-black dark:text-black">
+                        Variedad en el menú Amplia gama de opciones gastronómicas, desde aperitivos hasta postres, para satisfacer todos los gustos y preferencias.
+                        Ambiente acogedor Espacio elegante y acogedor que promueve la creación de recuerdos memorables con amigos y familiares, donde los invitados se sienten cómodos y bienvenidos.
+                        Profesionalismo y atención personalizada: Equipo altamente capacitado que ofrece un servicio excepcional y atención personalizada en cada etapa del evento, garantizando una experiencia sin contratiempos.
+                        Flexibilidad y personalización Posibilidad de personalizar cada detalle del evento, desde el menú hasta la decoración y la disposición del espacio, adaptándose a las necesidades y visiones individuales de cada cliente.
+                      </Typography>
+                    </div>
+                    <div className="absolute top-0 left-0 w-full h-full bg-[#6F4E37] opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
                   </div>
                 </CardBody>
               </Card>
@@ -74,22 +89,28 @@ export function Events() {
                 <CardHeader
                   shadow={false}
                   floated={false}
-                  className="m-0 w-2/5 shrink-0 rounded-r-none"
+                  className="m-0 w-2/5 shrink-0 rounded-r-none flex items-center justify-center"
                 >
                   <img
-                    src="/img/event2.jpg"
+                    src="/img/eventos_matrimonios.jpg"
                     alt="card-image"
-                    className="h-full w-full object-cover"
+                    className="object-cover object-center w-full h-auto md:h-full min-h-[800px]"
                   />
                 </CardHeader>
                 <CardBody className="flex items-center justify-center">
-                  <div className="text-justify">
-                    <Typography variant="h4" color="blue-gray" className="mb-2">
-                    Matrimonios
-                    </Typography>
-                    <Typography color="gray" className="mb-8 font-normal">
-                      Don Henry Café es el lugar perfecto para celebrar tu boda de ensueño. Contamos con un salón principal con capacidad para hasta 200 invitados, así como con una terraza al aire libre para una ceremonia íntima. Nuestro equipo de profesionales te ayudará a planificar cada detalle de tu boda para que sea un día inolvidable.
-                    </Typography>
+                  <div className="text-justify relative group">
+                    <div className="text-justify relative group">
+                      <Typography variant="h4" className="text-blue-gray group-hover:text-black dark:text-black">
+                        Matrimonios
+                        <br />
+                      </Typography>
+                    </div>
+                    <div className="mb-8">
+                      <Typography className="text-gray font-normal group-hover:text-black dark:text-black">
+                        "¡Celebra tu día especial en grande! Don Henry Café te ofrece el escenario perfecto para tu boda de ensueño. Con un salón principal impresionante, con capacidad para hasta 200 invitados, y una hermosa terraza al aire libre para ceremonias íntimas bajo el cielo estrellado. Nuestro equipo de expertos estará a tu lado en cada paso del camino, asegurándose de que cada detalle sea perfecto y que tu día sea realmente inolvidable. ¡Deja que Don Henry Café sea el escenario de tu amor eterno!"
+                      </Typography>
+                    </div>
+                    <div className="absolute top-0 left-0 w-full h-full bg-[#6F4E37] opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
                   </div>
                 </CardBody>
               </Card>
@@ -99,21 +120,28 @@ export function Events() {
                 <CardHeader
                   shadow={false}
                   floated={false}
-                  className="m-0 w-2/5 shrink-0 rounded-r-none"
+                  className="m-0 w-2/5 shrink-0 rounded-r-none flex items-center justify-center"
                 >
                   <img
-                    src="/img/event3.jpg"
-                    className="h-full w-full object-cover"
+                    src="/img/evento_empresarial.jpg"
+                    className="object-cover object-center w-full h-auto md:h-full min-h-[800px]"
                   />
                 </CardHeader>
                 <CardBody className="flex items-center justify-center">
-                  <div className="text-justify">
-                    <Typography variant="h4" color="blue-gray" className="mb-2">
-                    Eventos empresariales
-                    </Typography>
-                    <Typography color="gray" className="mb-8 font-normal">
-                      Don Henry Café ofrece espacios ideales para reuniones de negocios, conferencias o lanzamientos de productos. Contamos con equipos audiovisuales de última generación y catering personalizado.
-                    </Typography>
+                  <div className="text-justify relative group">
+                    <div className="text-justify relative group">
+                      <Typography variant="h4" className="text-blue-gray group-hover:text-black dark:text-black">
+                        Eventos Empresariales
+                        <br />
+                      </Typography>
+                    </div>
+                    <div className="mt-2 mb-0">
+                      <Typography className="text-gray font-normal group-hover:text-black dark:text-black text-sm md:text-base lg:text-lg">
+                        ¡Haz que tus eventos empresariales sean un éxito en Don Henry Café! Nuestro espacio elegante y acogedor es el escenario perfecto para tus reuniones de negocios, conferencias, lanzamientos de productos y más. Con salones versátiles que se adaptan a tus necesidades, nuestro equipo profesional te brindará una atención personalizada en cada detalle. Disfruta de nuestra deliciosa variedad gastronómica, desde coffee breaks hasta almuerzos ejecutivos.
+                      </Typography>
+
+                    </div>
+                    <div className="absolute top-0 left-0 w-full h-full bg-[#6F4E37] opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
                   </div>
                 </CardBody>
               </Card>
@@ -122,17 +150,17 @@ export function Events() {
           </div>
         </div>
         <div className="fixed bottom-4 right-4 z-50">
-        <Button
-          color="green"
-          buttonType="filled"
-          size="regular"
-          onClick={handleContactUs}
-          className="flex items-center space-x-2 transition-transform hover:scale-105"
-        >
-          <img src="/img/wapp.jpg" alt="WhatsApp Icon" className="w-10 h-10 rounded-full overflow-hidden" />
-          <span>Contactanos</span>
-        </Button>
-      </div>
+          <Button
+            color="green"
+            buttonType="filled"
+            size="regular"
+            onClick={handleContactUs}
+            className="flex items-center space-x-2 transition-transform hover:scale-105"
+          >
+            <img src="/img/wapp.jpg" alt="WhatsApp Icon" className="w-10 h-10 rounded-full overflow-hidden" />
+            <span>Contactanos</span>
+          </Button>
+        </div>
       </section>
       <div className="bg-white">
         <Footer />

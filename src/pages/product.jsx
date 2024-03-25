@@ -63,10 +63,23 @@ export function Product() {
 
   return (
     <>
-      <section className="relative block h-[50vh]">
-        <div className="bg-profile-background absolute top-0 -mt-10 h-full w-full bg-[url('/img/coffee.jpg')] bg-cover bg-center scale-105" />
+      <section className="relative flex h-screen sm:h-auto content-center items-center justify-center pt-16 pb-32 sm:pb-8">
+      <div className="absolute top-0 h-full w-full bg-[url('/img/coffee.jpg')] bg-cover bg-center" />
+      <br />
         <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
+        <br />
+        <div className="max-w-8xl container relative mx-auto">
+        <br />
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl mb-4 sm:mb-9 text-white text-center"></h1>
+        <br /><br />
+          <p className="relative flex h-screen sm:h-auto content-center items-center justify-center pt-16 pb-32 sm:pb-8"></p>
+          <br />
+        </div>
       </section>
+
+
+
+
 
 
       <section className="relative bg-white py-16">
@@ -113,10 +126,10 @@ export function Product() {
                   isOpen={isModalOpen}
                   onRequestClose={handleCloseModal}
                   contentLabel="Carrito de compras"
-                  className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[400px] w-full bg-white p-8 rounded outline-none z-50"
+                  className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[400px] w-full md:max-w-lg lg:max-w-xl bg-white p-8 rounded outline-none z-50"
                   overlayClassName="fixed top-0 left-0 w-full h-full bg-black/70 z-40"
                 >
-                  <div className="max-h-72 overflow-y-auto"> {/* Agregando las clases de Tailwind para el desplazamiento */}
+                  <div className="max-h-72 md:max-h-[70vh] overflow-y-auto">
                     <Typography variant="h4" className="mb-4">
                       Carrito de Compras
                     </Typography>
@@ -154,6 +167,7 @@ export function Product() {
                     Cerrar
                   </Button>
                 </Modal>
+
 
 
                 <div className="flex justify-start py-4 pt-8 lg:pt-4">
@@ -294,7 +308,7 @@ export function Product() {
                   </Button>
                 </CardFooter>
               </Card>
-              <Card className="mt-6 w-96 m-3">
+              <Card className="mt-6 w-full m-3">
                 <CardHeader color="blue-gray" className="relative h-50">
                   <img
                     src="/img/cafe_mocca.jpg"
@@ -318,7 +332,7 @@ export function Product() {
                   </Button>
                 </CardFooter>
               </Card>
-              <Card className="mt-6 w-96 m-3">
+              <Card className="mt-6 w-full m-3">
                 <CardHeader color="blue-gray" className="relative h-50">
                   <img
                     src="/img/Café_irish.jpg"
@@ -344,7 +358,7 @@ export function Product() {
                 </CardFooter>
               </Card>
 
-              <Card className="mt-6 w-96 m-3">
+              <Card className="mt-6 w-full m-3">
                 <CardHeader color="blue-gray" className="relative h-50">
                   <img
                     src="/img/Café_expresso.jpg"
@@ -369,7 +383,7 @@ export function Product() {
                   </Button>
                 </CardFooter>
               </Card>
-              <Card className="mt-6 w-96 m-3">
+              <Card className="mt-6 w-full m-3">
                 <CardHeader color="blue-gray" className="relative h-50">
                   <img
                     src="/img/CafeAmericano.jpg"
@@ -394,7 +408,7 @@ export function Product() {
                   </Button>
                 </CardFooter>
               </Card>
-              <Card className="mt-6 w-96 m-3">
+              <Card className="mt-6 w-full m-3">
                 <CardHeader color="brown" className="relative h-50">
                   <img
                     src="/img/CafeMacchiato.jpg"
@@ -420,7 +434,7 @@ export function Product() {
                 </CardFooter>
 
               </Card>
-              <Card className="mt-6 w-96 m-3">
+              <Card className="mt-6 w-full m-3">
                 <CardHeader color="brown" className="relative h-50">
                   <img
                     src="/img/Cappuccino.jpg"
@@ -446,7 +460,7 @@ export function Product() {
                 </CardFooter>
 
               </Card>
-              <Card className="mt-6 w-96 m-3">
+              <Card className="mt-6 w-full m-3">
                 <CardHeader color="brown" className="relative h-50">
                   <img
                     src="/img/Ristretto_espresso.jpg"
