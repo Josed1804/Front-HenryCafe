@@ -23,7 +23,7 @@ export function Events() {
 
   return (
     <>
-      <section className="relative block h-[90vh]">
+      <section className="relative block h-[85vh]">
         <div className="bg-profile-background absolute top-0 left-0 w-full h-full" style={{ backgroundPosition: "center top -10px" }}>
           <img src="/img/eventos1.jpg" alt="Eventos" className="object-cover w-full h-full" />
         </div>
@@ -64,7 +64,7 @@ export function Events() {
                   <img
                     src="/img/eventoos_sociales.jpg"
                     alt="card-image"
-                    className="object-cover object-center w-full h-auto md:h-full min-h-[800px]"
+                    className="object-cover object-center w-full h-auto md:h-full min-h-[200px]"
                   />
                 </CardHeader>
                 <CardBody className="flex items-center justify-center">
@@ -95,7 +95,7 @@ export function Events() {
                   <img
                     src="/img/eventos_matrimonios.jpg"
                     alt="card-image"
-                    className="object-cover object-center w-full h-auto md:h-full min-h-[800px]"
+                    className="object-cover object-center w-full h-auto md:h-full min-h-[200px]"
                   />
                 </CardHeader>
                 <CardBody className="flex items-center justify-center">
@@ -106,7 +106,7 @@ export function Events() {
                         <br />
                       </Typography>
                     </div>
-                    <div className="mb-8">
+                    <div className="mt-2 mb-0">
                       <Typography className="text-gray font-normal group-hover:text-black dark:text-black">
                         "¡Celebra tu día especial en grande! Don Henry Café te ofrece el escenario perfecto para tu boda de ensueño. Con un salón principal impresionante, con capacidad para hasta 200 invitados, y una hermosa terraza al aire libre para ceremonias íntimas bajo el cielo estrellado. Nuestro equipo de expertos estará a tu lado en cada paso del camino, asegurándose de que cada detalle sea perfecto y que tu día sea realmente inolvidable. ¡Deja que Don Henry Café sea el escenario de tu amor eterno!"
                       </Typography>
@@ -125,7 +125,7 @@ export function Events() {
                 >
                   <img
                     src="/img/evento_empresarial.jpg"
-                    className="object-cover object-center w-full h-auto md:h-full min-h-[800px]"
+                    className="object-cover object-center w-full h-auto md:h-full min-h-[200px]"
                   />
                 </CardHeader>
                 <CardBody className="flex items-center justify-center">

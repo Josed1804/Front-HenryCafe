@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
+import { number } from "prop-types";
 
 
 
@@ -14,16 +15,18 @@ export function SignUp() {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [pswd, setPswd] = useState('');
+  const [number, setNumber] = useState('');
+  const [address, setAddress] = useState('');
   const navigate = useNavigate();
   const handleSignUp = async () => {
     try {
       console.log('Antes de la solicitud fetch');
-      const response = await fetch('https://backend-flax-seven.vercel.app/api/signup', {
+      const response = await fetch('http://localhost:5000/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nombre, email, pswd }),
+        body: JSON.stringify({ nombre, email, pswd, number, address }),
       });
 
       const data = await response.json();
@@ -67,22 +70,22 @@ export function SignUp() {
         />
       </div>
       <div className="w-full lg:w-3/5 flex flex-col items-center justify-center">
-      <div className="flex flex-col items-center justify-center">
-        <Link to="/">
-          <img src="/img/logop.png" alt="Logo" width={'100'} className="mb-4" />
-        </Link>
-        <Typography variant="h2" className="font-bold mb-4">Registrate hoy</Typography>
-        <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal">Ingresa tu nombre, correo y contraseña para registrarte</Typography>
-      </div>
+        <div className="flex flex-col items-center justify-center">
+          <Link to="/">
+            <img src="/img/logop.png" alt="Logo" width={'100'} className="mb-4" />
+          </Link>
+          <Typography variant="h2" className="font-bold mb-4">Registrate hoy</Typography>
+          <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal">Ingresa tu nombre, correo y contraseña para registrarte</Typography>
+        </div>
         <form className="mt-8 mb-2 mx-auto w-full max-w-lg lg:w-2/3">
           <div className="mb-6 flex flex-col gap-6">
             <Typography variant="small" color="blue-gray" className="-mb-3 font-medium">
-              Nombre
+              Nombre Completo
             </Typography>
             <Input
               type="text"
               size="lg"
-              placeholder="AlejaMUndo"
+              placeholder="Nombre + apellido"
               value={nombre}
               className="border-t-blue-gray-200 focus:border-t-gray-900"
               labelProps={{
@@ -120,6 +123,35 @@ export function SignUp() {
               }}
               onChange={(e) => setPswd(e.target.value)}
             />
+            <Typography variant="small" color="blue-gray" className="-mb-3 font-medium">
+              Numero de Wapp
+            </Typography>
+            <Input
+              type="tel"
+              size="lg"
+              placeholder="123456789"
+              value={number}
+              className="border-t-blue-gray-200 focus:border-t-gray-900"
+              labelProps={{
+                className: "before:content-none after:content-none",
+              }}
+              onChange={(e) => setNumber(e.target.value)}
+            />
+            <Typography variant="small" color="blue-gray" className="-mb-3 font-medium">
+              Direccion de vivienda
+            </Typography>
+            <Input
+              type="text"
+              size="lg"
+              placeholder="Domicilio"
+              value={address}
+              className="border-t-blue-gray-200 focus:border-t-gray-900"
+              labelProps={{
+                className: "before:content-none after:content-none",
+              }}
+              onChange={(e) => setAddress(e.target.value)}
+            />
+
           </div>
 
           <Button className="mt-6" fullWidth color="brown" onClick={handleSignUp}>

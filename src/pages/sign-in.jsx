@@ -13,43 +13,48 @@ import { useNavigate } from "react-router-dom";
 export function SignIn() {
   const [email, setEmail] = useState("");
   const [pswd, setPswd] = useState("");
-  const navigate = useNavigate(); 
-
+  const navigate = useNavigate();
+ 
   const handleSignIn = async () => {
-    try {
-      console.log('Antes de la solicitud fetch');
-      const response = await fetch("https://backend-flax-seven.vercel.app/api/signin", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, pswd }),
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-  
-      const data = await response.json();
-  
-      if (data.success) {
-        // La autenticación fue exitosa
-        console.log("Inicio de sesión exitoso:", data.user);
-        Swal.fire({
-          icon: 'success',
-          title: 'Inicio de sesión exitoso',
-          text: '¡Bienvenido de nuevo!',
-        });
-
-        navigate(`/product?nombre=${data.user.name}`);
-      } else {
-        // La autenticación falló
-        console.error("Error al iniciar sesión:", data.error);
-        Swal.fire({
-          icon: 'error',
-          title: 'Error al iniciar sesión',
-          text: data.error,
-        });
-      }
+     try {
+       // Realiza la solicitud de inicio de sesión al servidor
+       const response = await fetch("http://localhost:5000/api/signin", {
+         method: "POST",
+         headers: {
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify({ email, pswd }),
+       });
+ 
+       // Verifica si la respuesta del servidor fue exitosa
+       if (!response.ok) {
+         throw new Error(`HTTP error! Status: ${response.status}`);
+       }
+ 
+       // Parsea la respuesta del servidor a JSON
+       const data = await response.json();
+ 
+       // Verifica si la autenticación fue exitosa
+       if (data.success) {
+         // La autenticación fue exitosa
+         console.log("Inicio de sesión exitoso:", data.user);
+         Swal.fire({
+           icon: 'success',
+           title: 'Inicio de sesión exitoso',
+           text: '¡Bienvenido de nuevo!',
+         });
+ 
+         // Navega al producto con el nombre del usuario
+         navigate(`/product?nombre=${data.user.name}`);
+       } else {
+         // La autenticación falló
+         console.error("Error al iniciar sesión:", data.error);
+         Swal.fire({
+           icon: 'error',
+           title: 'Error al iniciar sesión',
+           text: data.error,
+         });
+       }
     } catch (error) {
       // Error de red
       console.error("Error de red:", error);
@@ -60,17 +65,17 @@ export function SignIn() {
       });
     }
   };
-  
+
   return (
     <section className="m-8 flex gap-4">
       <div className="w-full lg:w-3/5 mt-24">
-      <div className="flex flex-col items-center justify-center">
-        <Link to="/">
-          <img src="/img/logop.png" alt="Logo" width={'100'} className="mb-4" />
-        </Link>
-        <Typography variant="h2" className="font-bold mb-4"> Iniciar Sesion </Typography>
-        <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal">Ingresa tu correo y contraseña para Iniciar Sesion </Typography>
-      </div>
+        <div className="flex flex-col items-center justify-center">
+          <Link to="/">
+            <img src="/img/logop.png" alt="Logo" width={'100'} className="mb-4" />
+          </Link>
+          <Typography variant="h2" className="font-bold mb-4"> Iniciar Sesion </Typography>
+          <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal">Ingresa tu correo y contraseña para Iniciar Sesion </Typography>
+        </div>
 
         <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
           <div className="mb-1 flex flex-col gap-6">
@@ -78,7 +83,7 @@ export function SignIn() {
               Email
             </Typography>
             <Input
-            type="email"
+              type="email"
               size="lg"
               placeholder="name@mail.com"
               value={email}
